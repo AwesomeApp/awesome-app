@@ -1,8 +1,9 @@
 {
   "name": "awesome-app",
   "version": "1.0.0",
-  "description": "A client for Awesome",
+  "description": "A reader for Awesome",
   "author": "Fangdun Cai <cfddream@gmail.com>",
+  "license": "MIT",
   "private": true,
   "main": "electron.js",
   "scripts": {
@@ -17,7 +18,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
-    "vue": "^2.0.1"
+    "vue": "2.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
