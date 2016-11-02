@@ -20,8 +20,11 @@
   "dependencies": {
     "animate.css": "3.5.2",
     "bulma": "0.2.3",
+    "markdown-it": "8.0.1",
     "vue": "2.0.3",
-    "vue-router": "2.0.1"
+    "vue-resource": "1.0.3",
+    "vue-router": "2.0.1",
+    "vuex": "2.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
