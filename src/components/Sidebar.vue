@@ -6,13 +6,58 @@
     <ul class="menu-list">
       <li>
         <router-link :to="{ name: 'List' }">list</router-link>
+        <ul>
+          <li v-for="item in list">
+            <router-link :to="{ name: 'ListItem', params: { name: item.title } }">{{ item.title }}</router-link>
+          </li>
+        </ul>
       </li>
       <li>
         <router-link :to="{ name: 'Tags' }">tags</router-link>
       </li>
     </ul>
+
+    <button class="button" @click="openModal">添加</button>
   </aside>
 </template>
+
+<script>
+import Vue from 'vue'
+import Modal from './Modal'
+
+const FormModal = Vue.extend(Modal)
+
+const openFormModal = (propsData = {}) => {
+  const form = new FormModal({
+    el: document.createElement('div'),
+    propsData
+  }).$mount()
+  // form.$el.classList.add('is-active')
+  document.getElementById('app').appendChild(form.$el)
+  return form
+}
+
+export default {
+
+  mounted () {
+    // console.log(this.list)
+  },
+
+  computed: {
+    list () {
+      return this.$store.state.list
+    }
+  },
+
+  methods: {
+    openModal (e) {
+      openFormModal({
+        title: '添加链接'
+      })
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 @import '~bulma/sass/utilities/variables';
