@@ -8,7 +8,7 @@
           </a>
         </div>
         <div class="nav-center">
-          <a class="nav-item hero-brand" href="/">
+          <a class="nav-item is-brand" href="/">
             <img src="~assets/awesome-logo.png">
             <div class="is-hidden-mobile">
               <span class="vue">Awesome</span><strong class="admin">App</strong>
@@ -45,7 +45,7 @@
   }
 }
 
-.hero-brand {
+.is-brand {
   .vue {
     margin-left: 10px;
     color: #36AC70;
