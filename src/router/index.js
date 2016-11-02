@@ -19,6 +19,7 @@ const routes = [
   },
   {
     path: '/list/:name',
+    name: 'ListItem',
     component: ListItem
   },
   {
