@@ -22,6 +22,10 @@ export default {
     Sidebar,
     AppMain,
     FooterBar
+  },
+
+  beforeCreate () {
+    this.$store.dispatch('FETCH_LIST_DATA')
   }
 
 }

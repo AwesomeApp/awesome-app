@@ -34,7 +34,6 @@ const openFormModal = (propsData = {}) => {
   }).$mount()
   // form.$el.classList.add('is-active')
   document.getElementById('app').appendChild(form.$el)
-  return form
 }
 
 export default {

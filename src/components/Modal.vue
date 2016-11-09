@@ -10,23 +10,29 @@
         <form class="form">
           <label class="label">名称</label>
           <p class="control">
-            <input class="input" type="text" placeholder="请输入链接名称">
+            <input ref="nameInput" class="input" type="text" placeholder="请输入链接名称" autofocus tabindex="2" v-model="newItem.title">
           </p>
           <label class="label">链接</label>
           <p class="control">
-            <input class="input" type="text" placeholder="请输入链接地址">
+            <input class="input" type="text" placeholder="请输入链接地址" tabindex="3" v-model="newItem.url">
+          </p>
+          <label class="label">简介</label>
+          <p class="control">
+            <textarea class="textarea" placeholder="请输入简介" tabindex="4" v-model="newItem.description"></textarea>
           </p>
         <form>
       </section>
       <footer class="modal-card-foot">
-        <a class="button is-primary" @click="save">保存</a>
-        <a class="button" @click="cancle">取消</a>
+        <a class="button is-primary" tabindex="5" @click="save">保存</a>
+        <a class="button" tabindex="6" @click="cancle">取消</a>
       </footer>
     </div>
   </div>
 </template>
 
 <script>
+import store from '../store'
+
 export default {
 
   props: {
@@ -35,12 +41,18 @@ export default {
 
   data () {
     return {
-      show: false
+      show: false,
+      newItem: {
+        title: '',
+        description: '',
+        url: ''
+      }
     }
   },
 
   mounted () {
     this.show = true
+    this.$refs.nameInput.focus()
   },
 
   beforeDestroy () {
@@ -50,7 +62,10 @@ export default {
   methods: {
 
     save (e) {
-
+      // this.$store?
+      store.commit('ADD_ITEM', { item: Object.assign({}, this.newItem) })
+      this.newItem.title = this.newItem.url = this.newItem.description = ''
+      this.hide()
     },
 
     cancle (e) {

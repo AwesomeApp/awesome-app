@@ -19,12 +19,14 @@
   },
   "dependencies": {
     "animate.css": "3.5.2",
+    "axios": "0.15.2",
     "bulma": "0.2.3",
+    "lowdb": "0.14.0",
     "markdown-it": "8.1.0",
     "vue": "2.0.5",
-    "vue-resource": "1.0.3",
     "vue-router": "2.0.1",
-    "vuex": "2.0.0"
+    "vuex": "2.0.0",
+    "wysiwyg.css": "0.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.2",
