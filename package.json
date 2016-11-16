@@ -9,9 +9,9 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
-    "build:mac": "NODE_ELECTRON=true npm run build && electron-packager . Awesome --platform=darwin --out ./dist/$npm_package_version",
-    "build:linux": "NODE_ELECTRON=true npm run build && electron-packager . Awesome --platform=linux --out ./dist/$npm_package_version",
-    "build:win": "NODE_ELECTRON=true npm run build && electron-packager . Awesome --platform=win32 --out ./dist/$npm_package_version",
+    "build:mac": "NODE_ELECTRON=true npm run build && electron-packager . Awesome --platform=darwin --out ./dist/$npm_package_version --overwrite",
+    "build:linux": "NODE_ELECTRON=true npm run build && electron-packager . Awesome --platform=linux --out ./dist/$npm_package_version --overwrite",
+    "build:win": "NODE_ELECTRON=true npm run build && electron-packager . Awesome --platform=win32 --out ./dist/$npm_package_version --overwrite",
     "unit": "karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
