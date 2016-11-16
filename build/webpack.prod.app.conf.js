@@ -12,6 +12,9 @@ var env = process.env.NODE_ENV === 'testing'
 
 var isELECTRON = process.env.NODE_ELECTRON === 'true'
 
+config.build.index = path.resolve(__dirname, '../app/www/index.html')
+config.build.assetsRoot = path.resolve(__dirname, '../app/www')
+
 var webpackConfig = merge(baseWebpackConfig, {
   module: {
     loaders: utils.styleLoaders({ sourceMap: config.build.productionSourceMap, extract: true })
@@ -19,7 +22,7 @@ var webpackConfig = merge(baseWebpackConfig, {
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
     path: config.build.assetsRoot,
-    publicPath: isELECTRON ? path.join(__dirname, '../dist/') : '/',
+    publicPath: isELECTRON ? path.join(__dirname, '../app/www/') : '',
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
@@ -52,7 +55,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       filename: process.env.NODE_ENV === 'testing'
         ? 'index.html'
         : config.build.index,
-      template: 'index.html',
+      template: 'index-app.html',
       inject: true,
       minify: {
         removeComments: true,
